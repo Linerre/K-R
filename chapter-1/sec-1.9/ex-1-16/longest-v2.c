@@ -33,7 +33,7 @@ int main()
  */
 int getline(char s[], int lim)
 {
-    int c, i;
+    int c, i, j, k;
 
    /* keep couting characters and storing them in s 
     * when the line is shorter s  
@@ -42,7 +42,6 @@ int getline(char s[], int lim)
 	s[i] = c;
 
    /* keep counting when line is longer than s  */ 
-    int j;
     for (j = i; (c=getchar()) != EOF && c != '\n'; ++j);
     if (c == '\n') {
 /* 	s[i] = c; */
@@ -50,7 +49,13 @@ int getline(char s[], int lim)
 	++j;
     }
 /*     s[i] = '\0'; */
+    
+    /* print length  */
     printf("The length of the line is %d characters\n", j);
+    /* print as much as possible the line  */ 
+    printf("The line can only be printed onto screen this much: \n");
+    for (k = 0; k < lim - 1; ++k)
+	printf("%s", s[k]);
     return 0;
 }
 
