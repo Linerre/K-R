@@ -1,2 +1,5 @@
 # ignore binaries
 *.out
+
+# ignore test files
+test*
